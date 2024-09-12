@@ -1,0 +1,35 @@
+{
+  "name": "mood-tracker-extended",
+  "version": "2.0.0",
+  "description": "An extended mood tracking application for classrooms with advanced features",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "server": "nodemon backend/server.js",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "install-all": "npm install && npm install --prefix frontend",
+    "build": "npm run build --prefix frontend",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend",
+    "create-admin": "node scripts/createAdmin.js"
+  },
+  "keywords": ["mood", "tracker", "education", "admin", "reporting"],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.0.12",
+    "pdfkit": "^0.13.0",
+    "csv-writer": "^1.6.0",
+    "i18next": "^21.6.3",
+    "i18next-http-backend": "^1.3.2",
+    "react-i18next": "^11.15.1"
+  },
+  "devDependencies": {
+    "concurrently": "^6.3.0",
+    "nodemon": "^2.0.14"
+  }
+}
